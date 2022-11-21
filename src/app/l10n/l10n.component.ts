@@ -21,7 +21,7 @@ export class LocalizationComponent implements OnInit {
   private getLocalization(): void {
     const all = this.localizationService.getAll();
     for (const language_id in all) {
-      if (all.hasOwnProperty(language_id)) {
+      if (Object.prototype.hasOwnProperty.call(all, language_id)) {
         this.l10n_languages.push({ 'id': language_id, 'name': all[language_id].language_name });
       }
     }

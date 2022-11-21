@@ -66,7 +66,7 @@ export class CvItemService {
     let language = this.featureToggles.default_language;
     try {
       const stored_language = JSON.parse(localStorage.getItem('l10n')).language;
-      if (DATA.hasOwnProperty(stored_language)) {
+      if (Object.prototype.hasOwnProperty.call(DATA, stored_language)) {
         language = stored_language;
       }
     } catch (err) { }

@@ -28,7 +28,7 @@ export class LocalizationService {
   }
 
   public get(language: string) {
-    if (L10N.hasOwnProperty(language)) {
+    if (Object.prototype.hasOwnProperty.call(L10N, language)) {
       return L10N[language]; // TODO merge with EN as default values
     }
     return this.getDefault();
